@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="fw-bold">My Projects</h1>
+    <p class="text-secondary">Selected works and contributions</p>
+</div>
+
+<div class="row g-4">
+    {% for project in student.projects %}
+    <div class="col-md-6">
+        <div class="card project-card h-100 p-4 text-white">
+            <h3 class="accent-color fw-bold">{{ project.title }}</h3>
+            <p class="text-secondary">{{ project.description }}</p>
+            <div class="mt-auto">
+                <div class="mb-3">
+                    {% for tech in project.tech %}
+                        <small class="badge bg-secondary me-1">{{ tech }}</small>
+                    {% endfor %}
+                </div>
+                <a href="{{ project.github }}" class="btn btn-outline-light btn-sm" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

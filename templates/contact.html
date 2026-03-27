@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+        <section class="text-center mb-5">
+            <h1 class="display-4 fw-bold mb-3">Get in <span class="accent-color">Touch</span></h1>
+            <p class="text-secondary">Have a question or want to work together? Feel free to reach out!</p>
+        </section>
+
+        <section class="mb-4 text-center">
+            <div class="d-flex flex-column gap-2">
+                <a href="mailto:{{ student.email }}" class="text-decoration-none text-light border border-secondary p-2 rounded-3 hover-effect">
+                    <span class="accent-color">Email:</span> {{ student.email }}
+                </a>
+                <a href="{{ student.github }}" target="_blank" class="text-decoration-none text-light border border-secondary p-2 rounded-3 hover-effect">
+                    <span class="accent-color">GitHub:</span> {{ student.github }}
+                </a>
+            </div>
+            
+            <div class="d-flex justify-content-center gap-4 mt-4">
+                <a href="https://t.me/@BehailuBerhanu" target="_blank" class="social-icon">
+                    <i class="fab fa-telegram fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/behailu-berhanu-0451b1317/" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="{{ student.github }}" target="_blank" class="social-icon">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="contact-section mt-5">
+            <form class="contact-form bg-dark p-4 rounded-4 border border-secondary" action="/contact/submit" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="form-label fw-bold">Your Name</label>
+                    <input type="text" class="form-control bg-transparent text-white border-secondary shadow-none" id="name" name="name" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="form-label fw-bold">Message</label>
+                    <textarea class="form-control bg-transparent text-white border-secondary shadow-none" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg fw-bold">Send Message</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}

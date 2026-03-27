@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-7 col-md-12 text-lg-start text-center">
+            <h1 class="display-2 fw-bold mb-3">Hi, I am <span class="accent-color">{{ student.name }}</span></h1>
+            <p class="lead text-secondary mb-4">{{ student.role }}</p>
+            <p class="text-light mb-4" style="max-width: 600px;">{{ student.bio }}</p>
+            <div class="d-flex gap-3 justify-content-lg-start justify-content-center">
+                <a href="/projects" class="btn btn-primary btn-lg">Explore Projects</a>
+                <a href="/contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="col-lg-5 col-md-12 text-center mt-5 mt-lg-0">
+            <div class="profile-image-container">
+                <img src="{{ url_for('static', filename='profile.JPG') }}" 
+                     alt="{{ student.name }}" 
+                     class="img-fluid profile-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills mt-5">
+    <h2 class="text-center mb-4">Tech Stack</h2>
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+    {% for skill in student.skills %}
+        <span class="skill-tag">{{ skill }}</span>
+    {% endfor %}
+    </div>
+</section>
+{% endblock %}
