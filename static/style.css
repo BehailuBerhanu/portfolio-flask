@@ -1,6 +1,6 @@
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0b0f19 !important; /* Deep dark blue/black */
+    background-color: #190b0b !important; /* Deep dark red/black */
 }
 
 .hero h1 {
@@ -8,32 +8,32 @@ body {
     font-weight: 800;
 }
 
-/* Purple accent like Eyuel's */
+
 .accent-color {
-    color: #6366f1;
+    color: #FF0000;
 }
 
 .skill-tag {
-    background: #1e293b;
+    background: #3b1e1e;
     color: #cbd5e1;
-    border: 1px solid #334155;
+    border: 1px solid #553333;
     padding: 5px 15px;
     border-radius: 20px;
 }
 
 .project-card {
-    background: #161b22;
-    border: 1px solid #30363d;
+    background: #221616;
+    border: 1px solid #3d3030;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    border-color: #6366f1;
+    border-color: #FF0000;
 }
 
 .btn-primary {
-    background-color: #6366f1;
+    background-color: #FF0000;
     border: none;
 }
 
@@ -43,14 +43,14 @@ body {
     display: inline-block;
     border-radius: 24px; /* Match the image's border radius */
     overflow: hidden;
-    background-color: 161b22; /* Dark background for the glow */
+    background-color: #161b22; /* Dark background for the glow */
 }
 
 .profile-img {
     border-radius: 24px; /* Soft rounded corners */
     max-width: 350px;    /* Limits the size of the image */
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2); /* Soft purple glow */
-    border: 2px solid #30363d;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2); /* Soft red glow */
+    border: 2px solid #3d3030;
     transition: filter 0.5s ease, transform 0.3s ease, border-color 0.3s ease;
     filter: grayscale(100%);
 }
@@ -58,7 +58,7 @@ body {
 .profile-img:hover {
     filter: grayscale(0%);
     transform: scale(1.02); /* Slight zoom on hover */
-    border-color: #6366f1;   /* Border turns purple on hover */
+    border-color: #FF0000;   /* Border turns red on hover */
     cursor: pointer;
 }
 
@@ -68,8 +68,38 @@ body {
 }
 
 .social-icon:hover {
-    color: #6366f1; /* Purple accent on hover */
+    color: #FF0000; /* Red accent on hover */
     transform: translateY(-5px); /* Lift effect */
+}
+
+/* Override the primary button hover state */
+.btn-primary:hover, 
+.btn-primary:active, 
+.btn-primary:focus {
+    background-color: #CC0000 !important; /* A slightly darker red for the hover effect */
+    border-color: #CC0000 !important;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Optional: adds a red glow */
+}
+
+/* Specifically for your project buttons if they use the .btn class */
+.btn:hover {
+    background-color: #CC0000 !important;
+    border-color: #CC0000 !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Styling for the Outline Button (Contact Me) */
+.btn-outline-light {
+    border-color: #ffffff;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Hover State: White background with Black text */
+.btn-outline-light:hover {
+    background-color: #ffffff !important; /* Forces the background to white */
+    color: #000000 !important;            /* Forces the text to black */
+    border-color: #ffffff !important;
 }
 
 /* responsive adjustment for smaller screens */

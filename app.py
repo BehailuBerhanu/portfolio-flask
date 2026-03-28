@@ -1,9 +1,9 @@
-from flask import Flask, render_template
-from flask import request
+from flask import Flask, render_template, request, flash, redirect, url_for
+
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Required for flashing messages
 
-# You need to put your real student informations here
 
 student = {
     "name": "Behailu",
@@ -48,7 +48,9 @@ def contact():
     message = request.form["message"]
     # Process the contact form data (e.g., send an email, save to database)
     print(f"Message from {name}: {message}")
-    return "Thank you for your message! We will get back to you soon."
+    flash("Thank you for your message! We will get back to you soon.", "success")
+
+    return redirect(url_for("show_contact"))
 
 @app.route("/What-I-am-learning")
 def learning():
