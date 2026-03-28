@@ -24,7 +24,7 @@ student = {
             "title": "Professional Portfolio",
             "description": "A modern, responsive personal portfolio built to showcase my development and design work. Features a dark-themed UI, custom CSS animations, and a Flask-powered backend.",
             "tech": ["Python", "Flask", "Bootstrap", "UI Design"],
-            "github": "https://github.com/BehailuBerhanu/portfolioB" 
+            "github": "https://github.com/BehailuBerhanu/portfolio-flask" 
         },
     ]
 }
