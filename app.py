@@ -19,7 +19,7 @@ student = {
             "tech": ["python", "OOP", "JSON"],
             "github": "https://github.com/BehailuBerhanu/SLMS"
         },
-        # Add more projects here
+        
         {
             "title": "Professional Portfolio",
             "description": "A modern, responsive personal portfolio built to showcase my development and design work. Features a dark-themed UI, custom CSS animations, and a Flask-powered backend.",
@@ -52,7 +52,7 @@ def contact():
 
     return redirect(url_for("show_contact"))
 
-@app.route("/What-I-am-learning")
+@app.route("/learning")
 def learning():
     return render_template("learning.html", student=student)
 
